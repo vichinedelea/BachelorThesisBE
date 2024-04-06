@@ -14,9 +14,9 @@ namespace BEapplication.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly UserContext _context;
+        private readonly ApplicationContext _context;
 
-        public UsersController(UserContext context)
+        public UsersController(ApplicationContext context)
         {
             _context = context;
         }

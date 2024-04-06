@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\dbcontexts\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:dbcontexts\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\migrations\\20240406160917_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:migrations\\20240406160917_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\beapplication.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:beapplication.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\dbcontexts\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:dbcontexts\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,19 +51,110 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserContext.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\DBContexts\\UserContext.cs",
-              "RelativeDocumentMoniker": "DBContexts\\UserContext.cs",
-              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\DBContexts\\UserContext.cs",
-              "RelativeToolTip": "DBContexts\\UserContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAgAAAA",
+              "Title": "ReservationsController.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Controllers\\ReservationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Controllers\\ReservationsController.cs",
+              "RelativeToolTip": "Controllers\\ReservationsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T09:20:33.096Z",
+              "WhenOpened": "2024-04-06T16:16:23.398Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "20240406160917_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Migrations\\20240406160917_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240406160917_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Migrations\\20240406160917_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20240406160917_InitialCreate.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T16:09:17.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BEapplication.http",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\BEapplication.http",
+              "RelativeDocumentMoniker": "BEapplication.http",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\BEapplication.http",
+              "RelativeToolTip": "BEapplication.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-04-06T15:59:03.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationContext.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\DBContexts\\ApplicationContext.cs",
+              "RelativeDocumentMoniker": "DBContexts\\ApplicationContext.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\DBContexts\\ApplicationContext.cs",
+              "RelativeToolTip": "DBContexts\\ApplicationContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T15:57:22.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T15:08:35.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-06T15:07:05.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-06T15:06:59.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "Models\\Reservation.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Models\\Reservation.cs",
+              "RelativeToolTip": "Models\\Reservation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T15:02:00.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
@@ -43,7 +162,8 @@
               "RelativeToolTip": "Controllers\\UsersController.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T09:18:04.921Z"
+              "WhenOpened": "2024-04-06T09:18:04.921Z",
+              "EditorCaption": ""
             }
           ]
         }
