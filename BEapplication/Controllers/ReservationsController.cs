@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BEapplication.DBContexts;
 using BEapplication.Models;
+using BEapplication.Interfaces;
 
 namespace BEapplication.Controllers
 {
@@ -15,10 +11,22 @@ namespace BEapplication.Controllers
     public class ReservationsController : ControllerBase
     {
         private readonly ApplicationContext _context;
+        private readonly IReservationLogic _reservationLogic;
 
-        public ReservationsController(ApplicationContext context)
+        public ReservationsController(ApplicationContext context, IReservationLogic reservationLogic)
         {
             _context = context;
+            _reservationLogic = reservationLogic;
+        }
+
+        // POST: api/Reservations
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<IActionResult> AddReservation(RequestNewReservation newReservation)
+        {
+            await _reservationLogic.AddReservation(newReservation);
+
+            return Ok(newReservation);
         }
 
         // GET: api/Reservations
@@ -71,17 +79,6 @@ namespace BEapplication.Controllers
             }
 
             return NoContent();
-        }
-
-        // POST: api/Reservations
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Reservation>> PostReservation(Reservation reservation)
-        {
-            _context.Reservations.Add(reservation);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetReservation", new { id = reservation.Id }, reservation);
         }
 
         // DELETE: api/Reservations/5

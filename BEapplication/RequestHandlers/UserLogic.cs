@@ -13,8 +13,16 @@ namespace BEapplication.RequestHandlers
         {
             _context = context;
         }
-        public async Task AddUser(User user)
+        public async Task AddUser(RequestNewUser newUser)
         {
+            var user = new User
+            {
+                Id = Guid.NewGuid(),
+                Name = newUser.UserName,
+                Email = newUser.Email,
+                Password = newUser.Password
+            };
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
         }

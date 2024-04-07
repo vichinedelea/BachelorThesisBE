@@ -2,7 +2,6 @@ using BEapplication.DBContexts;
 using BEapplication.Interfaces;
 using BEapplication.RequestHandlers;
 using Microsoft.EntityFrameworkCore;
-using NuGet.Packaging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +15,7 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 });
 
 builder.Services.AddScoped<IUserLogic, UserLogic>();
+builder.Services.AddScoped<IReservationLogic, ReservationLogic>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

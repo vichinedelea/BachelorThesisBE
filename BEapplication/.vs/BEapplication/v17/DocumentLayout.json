@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\requesthandlers\\reservationlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:requesthandlers\\reservationlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\models\\userloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:models\\userloginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\interfaces\\iuserlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:interfaces\\iuserlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\requesthandlers\\userlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:requesthandlers\\userlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\beapplication.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:beapplication.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|c:\\users\\ana\\desktop\\my bachelor thesis\\be\\bachelorthesisbe\\beapplication\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\interfaces\\ireservationlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FD3D927-44D8-4F56-93AF-3BB0A3FFBFDC}|BEapplication.csproj|solutionrelative:interfaces\\ireservationlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserLoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Models\\UserLoginModel.cs",
-              "RelativeDocumentMoniker": "Models\\UserLoginModel.cs",
-              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Models\\UserLoginModel.cs",
-              "RelativeToolTip": "Models\\UserLoginModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAWAAAA",
+              "Title": "ReservationLogic.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\RequestHandlers\\ReservationLogic.cs",
+              "RelativeDocumentMoniker": "RequestHandlers\\ReservationLogic.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\RequestHandlers\\ReservationLogic.cs",
+              "RelativeToolTip": "RequestHandlers\\ReservationLogic.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T14:29:53.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserLogic.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\RequestHandlers\\UserLogic.cs",
-              "RelativeDocumentMoniker": "RequestHandlers\\UserLogic.cs",
-              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\RequestHandlers\\UserLogic.cs",
-              "RelativeToolTip": "RequestHandlers\\UserLogic.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwB4AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T13:50:41.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BEapplication",
-              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\BEapplication.csproj",
-              "RelativeDocumentMoniker": "BEapplication.csproj",
-              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\BEapplication.csproj",
-              "RelativeToolTip": "BEapplication.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-07T13:48:37.092Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T13:42:02.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IUserLogic.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Interfaces\\IUserLogic.cs",
-              "RelativeDocumentMoniker": "Interfaces\\IUserLogic.cs",
-              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Interfaces\\IUserLogic.cs",
-              "RelativeToolTip": "Interfaces\\IUserLogic.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T13:39:13.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAwBEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T15:08:35.033Z",
+              "WhenOpened": "2024-04-07T16:59:18.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAjwBEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T16:58:17.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IReservationLogic.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Interfaces\\IReservationLogic.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IReservationLogic.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Interfaces\\IReservationLogic.cs",
+              "RelativeToolTip": "Interfaces\\IReservationLogic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T16:55:26.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAAwDMAAAAJAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T09:18:04.921Z",
+              "WhenOpened": "2024-04-07T16:52:07.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReservationsController.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Controllers\\ReservationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
+              "ToolTip": "C:\\Users\\Ana\\Desktop\\My bachelor thesis\\BE\\BachelorThesisBE\\BEapplication\\Controllers\\ReservationsController.cs",
+              "RelativeToolTip": "Controllers\\ReservationsController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAMwBwAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T16:43:57.104Z",
               "EditorCaption": ""
             }
           ]

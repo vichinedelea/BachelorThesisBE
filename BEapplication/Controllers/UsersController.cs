@@ -23,9 +23,9 @@ namespace BEapplication.Controllers
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<IActionResult> AddUser(User user)
+        public async Task<IActionResult> AddUser(RequestNewUser newUser)
         {
-            await _userLogic.AddUser(user);
+            await _userLogic.AddUser(newUser);
 
             return Ok();
         }
