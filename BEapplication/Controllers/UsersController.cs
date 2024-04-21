@@ -4,6 +4,7 @@ using BEapplication.DBContexts;
 using BEapplication.Models;
 using BEapplication.Interfaces;
 using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BEapplication.Controllers
 {
@@ -20,9 +21,12 @@ namespace BEapplication.Controllers
             _userLogic = userLogic;
         }
 
-        // POST: api/Users
+        //POST: api/Users
+
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Route("/addUser")]
+        [AllowAnonymous]
         public async Task<IActionResult> AddUser(RequestNewUser newUser)
         {
             await _userLogic.AddUser(newUser);
@@ -30,18 +34,20 @@ namespace BEapplication.Controllers
             return Ok();
         }
 
-        // GET: api/Users
-        [HttpGet("userLoginModel")]
-        public async Task<ActionResult<User>> GetUser([FromQuery] UserLoginModel userLoginModel)
+        // Post: api/Users
+        [HttpPost("/ckeckUser")]
+        public async Task<ActionResult> CkeckUser(UserLoginModel userLoginModel)
         {
-            var user = await _userLogic.GetUser(userLoginModel);
+            var userExists = await _userLogic.CkeckUser(userLoginModel);
 
-            if (user == null)
+            if (userExists == false)
             {
                 return NotFound(); // Returnați NotFound dacă utilizatorul nu este găsit
             }
-
-            return user;
+            else
+            {
+                return Ok();
+            }
         }
 
         // GET: api/Users

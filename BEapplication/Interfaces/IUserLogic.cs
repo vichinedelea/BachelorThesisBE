@@ -6,6 +6,6 @@ namespace BEapplication.Interfaces
     {
         public Task AddUser(RequestNewUser newUser);
 
-        public Task<User?> GetUser(UserLoginModel userLoginModel);
+        public Task<bool> CkeckUser(UserLoginModel userLoginModel);
     }
 }

@@ -27,21 +27,21 @@ namespace BEapplication.RequestHandlers
             await _context.SaveChangesAsync();
         }
 
-        public async Task<User?> GetUser(UserLoginModel userLoginModel)
+        public async Task<bool> CkeckUser(UserLoginModel userLoginModel)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userLoginModel.Email);
 
             if (user == null)
             {
-                return null;
+                return false;
             }
 
             if(user.Password != userLoginModel.Password)
             {
-                return null;
+                return false;
             }
 
-            return user;
+            return true ;
         }
     }
 }
