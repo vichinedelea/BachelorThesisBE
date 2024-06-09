@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using BEapplication.DBContexts;
 using BEapplication.Models;
 using BEapplication.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace BEapplication.Controllers
 {
@@ -22,6 +24,9 @@ namespace BEapplication.Controllers
         // POST: api/Reservations
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Route("/addReservation")]
+        [AllowAnonymous]
+        [EnableCors("AllowLocalhost3000")]
         public async Task<IActionResult> AddReservation(RequestNewReservation newReservation)
         {
             await _reservationLogic.AddReservation(newReservation);

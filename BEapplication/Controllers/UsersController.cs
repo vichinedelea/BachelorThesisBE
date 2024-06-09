@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using BEapplication.DBContexts;
 using BEapplication.Models;
 using BEapplication.Interfaces;
-using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace BEapplication.Controllers
 {
@@ -27,6 +27,7 @@ namespace BEapplication.Controllers
         [HttpPost]
         [Route("/addUser")]
         [AllowAnonymous]
+        [EnableCors("AllowLocalhost3000")]
         public async Task<IActionResult> AddUser(RequestNewUser newUser)
         {
             await _userLogic.AddUser(newUser);
