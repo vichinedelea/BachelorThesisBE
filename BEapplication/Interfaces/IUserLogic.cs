@@ -4,8 +4,7 @@ namespace BEapplication.Interfaces
 {
     public interface IUserLogic
     {
-        public Task AddUser(RequestNewUser newUser);
-
-        public Task<bool> CkeckUser(UserLoginModel userLoginModel);
+        Task Register(RequestNewUser newUser);
+        Task<string?> Login(UserLoginModel model);
     }
 }

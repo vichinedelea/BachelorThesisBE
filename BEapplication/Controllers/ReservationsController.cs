@@ -1,110 +1,80 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BEapplication.DBContexts;
+﻿using BEapplication.Interfaces;
 using BEapplication.Models;
-using BEapplication.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BEapplication.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/Reservations")]
     public class ReservationsController : ControllerBase
     {
-        private readonly ApplicationContext _context;
         private readonly IReservationLogic _reservationLogic;
 
-        public ReservationsController(ApplicationContext context, IReservationLogic reservationLogic)
+        public ReservationsController(IReservationLogic reservationLogic)
         {
-            _context = context;
             _reservationLogic = reservationLogic;
         }
 
-        // POST: api/Reservations
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        [Route("/addReservation")]
-        [AllowAnonymous]
-        [EnableCors("AllowLocalhost3000")]
-        public async Task<IActionResult> AddReservation(RequestNewReservation newReservation)
+        // YEAR → AVAILABLE MONTHS
+        [HttpGet("availability/{year}/months")]
+        public async Task<IActionResult> GetAvailableMonths(int year)
         {
-            await _reservationLogic.AddReservation(newReservation);
-
-            return Ok(newReservation);
+            var months = await _reservationLogic.GetAvailableMonths(year);
+            return Ok(months);
         }
 
-        // GET: api/Reservations
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Reservation>>> GetReservations()
+        // MONTH → AVAILABLE DAYS
+        [HttpGet("availability/{year}/{month}/days")]
+        public async Task<IActionResult> GetAvailableDays(int year, int month)
         {
-            return await _context.Reservations.ToListAsync();
+            var days = await _reservationLogic.GetAvailableDays(year, month);
+            return Ok(days);
         }
 
-        // GET: api/Reservations/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Reservation>> GetReservation(Guid id)
+        // DAY → AVAILABLE HOURS
+        [HttpGet("availability/{year}/{month}/{day}/hours")]
+        public async Task<IActionResult> GetAvailableHours(int year, int month, int day)
         {
-            var reservation = await _context.Reservations.FindAsync(id);
-
-            if (reservation == null)
-            {
-                return NotFound();
-            }
-
-            return reservation;
+            var hours = await _reservationLogic.GetAvailableHours(year, month, day);
+            return Ok(hours);
         }
 
-        // PUT: api/Reservations/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutReservation(Guid id, Reservation reservation)
+        [HttpPost("addReservation")]
+        [Authorize]
+        public async Task<IActionResult> AddReservation(RequestNewReservation request)
         {
-            if (id != reservation.Id)
-            {
-                return BadRequest();
-            }
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
 
-            _context.Entry(reservation).State = EntityState.Modified;
+            if (string.IsNullOrEmpty(email))
+                return Unauthorized();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ReservationExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _reservationLogic.AddReservation(request, email);
 
-            return NoContent();
+            return Ok("Rezervare creată.");
         }
 
-        // DELETE: api/Reservations/5
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteReservation(Guid id)
         {
-            var reservation = await _context.Reservations.FindAsync(id);
-            if (reservation == null)
-            {
-                return NotFound();
-            }
-
-            _context.Reservations.Remove(reservation);
-            await _context.SaveChangesAsync();
-
+            await _reservationLogic.DeleteReservation(id);
             return NoContent();
         }
 
-        private bool ReservationExists(Guid id)
+        [HttpGet("myReservations")]
+        [Authorize]
+        public async Task<IActionResult> GetMyReservations()
         {
-            return _context.Reservations.Any(e => e.Id == id);
+            var userEmail = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
+
+            if (string.IsNullOrEmpty(userEmail))
+                return Unauthorized();
+
+            var reservations = await _reservationLogic.GetMyReservations(userEmail);
+            return Ok(reservations);
         }
+
     }
 }
