@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using BEapplication.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,12 @@ builder.Services.AddDbContext<ApplicationContext>(options =>
 // DI
 builder.Services.AddScoped<IUserLogic, UserLogic>();
 builder.Services.AddScoped<IReservationLogic, ReservationLogic>();
+
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
+
+builder.Services.AddScoped<IEmailService, EmailService>();
+
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();

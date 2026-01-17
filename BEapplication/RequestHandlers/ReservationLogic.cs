@@ -12,10 +12,12 @@ namespace BEapplication.RequestHandlers
         private const int END_HOUR = 16;
 
         private readonly ApplicationContext _context;
+        private readonly IEmailService _emailService;
 
-        public ReservationLogic(ApplicationContext context)
+        public ReservationLogic(ApplicationContext context, IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         // ==================================================
@@ -56,6 +58,15 @@ namespace BEapplication.RequestHandlers
 
             _context.Reservations.Add(reservation);
             await _context.SaveChangesAsync();
+
+            var reservationDateTime =
+                request.ReservationDate.ToDateTime(TimeOnly.MinValue);
+
+            await _emailService.SendReservationEmail(
+                userEmail,
+                reservationDateTime,
+                request.ReservationHour,
+                request.People);
         }
 
         // ==================================================
