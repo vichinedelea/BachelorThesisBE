@@ -1,9 +1,8 @@
-﻿public interface IEmailService
+﻿using BEapplication.Models;
+
+public interface IEmailService
 {
-    Task SendReservationEmail(
-        string clientEmail,
-        DateTime date,
-        int hour,
-        int people
-    );
+    Task SendReservationCreatedEmail(Reservation reservation);
+
+    Task SendReservationCancelledEmail(Reservation reservation);
 }

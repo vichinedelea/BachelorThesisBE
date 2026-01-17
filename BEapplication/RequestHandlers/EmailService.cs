@@ -16,40 +16,68 @@ namespace BEapplication.RequestHandlers
             _settings = settings.Value;
         }
 
-        public async Task SendReservationEmail(
-            string clientEmail,
-            DateTime date,
-            int hour,
-            int people)
+        // 📩 EMAIL LA CREARE REZERVARE
+        public async Task SendReservationCreatedEmail(Reservation reservation)
+        {
+            var message = BuildMessage(
+                subject: "Rezervare nouă - Ferma Nedelea",
+                body:
+$@"A fost creată o nouă rezervare:
+
+📅 Data: {reservation.ReservationDate:dd.MM.yyyy}
+⏰ Ora: {reservation.ReservationHour}:00
+👥 Număr persoane: {reservation.People}
+📧 Client: {reservation.UserEmail}
+
+— Ferma Nedelea"
+            );
+
+            await SendAsync(message);
+        }
+
+        // ❌ EMAIL LA ANULARE REZERVARE
+        public async Task SendReservationCancelledEmail(Reservation reservation)
+        {
+            var message = BuildMessage(
+                subject: "Rezervare anulată - Ferma Nedelea",
+                body:
+$@"O rezervare a fost anulată:
+
+📅 Data: {reservation.ReservationDate:dd.MM.yyyy}
+⏰ Ora: {reservation.ReservationHour}:00
+📧 Client: {reservation.UserEmail}
+
+— Ferma Nedelea"
+            );
+
+            await SendAsync(message);
+        }
+
+        // 🔧 Helper comun (fără duplicare de cod)
+        private MimeMessage BuildMessage(string subject, string body)
         {
             var message = new MimeMessage();
 
             message.From.Add(new MailboxAddress(
                 _settings.SenderName,
-                "no-reply@mailtrap.io")); // IMPORTANT
+                "no-reply@mailtrap.io"));
 
             message.To.Add(new MailboxAddress(
                 "Admin",
                 "admin@fermanedelea.test"));
 
-            message.Subject = "Rezervare nouă - Ferma Nedelea";
+            message.Subject = subject;
+            message.Body = new TextPart("plain") { Text = body };
 
-            message.Body = new TextPart("plain")
-            {
-                Text =
-$@"A fost creată o nouă rezervare:
+            return message;
+        }
 
-📅 Data: {date:dd.MM.yyyy}
-⏰ Ora: {hour}:00
-👥 Număr persoane: {people}
-📧 Client: {clientEmail}
-
-— Ferma Nedelea"
-            };
-
+        // 🔌 Trimitere SMTP
+        private async Task SendAsync(MimeMessage message)
+        {
             using var client = new SmtpClient();
 
-            // 🔥 DEV ONLY – acceptă certificatul SSL
+            // DEV only
             client.ServerCertificateValidationCallback = (s, c, h, e) => true;
 
             await client.ConnectAsync(
@@ -57,7 +85,7 @@ $@"A fost creată o nouă rezervare:
                 587,
                 SecureSocketOptions.StartTls);
 
-            // 🔑 FIX CRITIC pentru Mailtrap
+            // 🔑 FIX Mailtrap
             client.AuthenticationMechanisms.Remove("CRAM-MD5");
 
             await client.AuthenticateAsync(

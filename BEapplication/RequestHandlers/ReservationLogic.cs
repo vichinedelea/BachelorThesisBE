@@ -62,11 +62,8 @@ namespace BEapplication.RequestHandlers
             var reservationDateTime =
                 request.ReservationDate.ToDateTime(TimeOnly.MinValue);
 
-            await _emailService.SendReservationEmail(
-                userEmail,
-                reservationDateTime,
-                request.ReservationHour,
-                request.People);
+            await _emailService.SendReservationCreatedEmail(reservation);
+
         }
 
         // ==================================================
@@ -187,10 +184,12 @@ namespace BEapplication.RequestHandlers
                 .FirstOrDefaultAsync(r => r.Id == reservationId);
 
             if (reservation == null)
-                throw new Exception("Rezervarea nu există.");
+                throw new Exception("Rezervarea nu există");
 
             _context.Reservations.Remove(reservation);
             await _context.SaveChangesAsync();
+
+            await _emailService.SendReservationCancelledEmail(reservation);
         }
 
         public async Task<List<Reservation>> GetMyReservations(string userEmail)
