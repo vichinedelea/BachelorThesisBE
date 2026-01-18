@@ -1,11 +1,11 @@
-﻿using BEapplication.DBContexts;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using BEapplication.DBContexts;
 using BEapplication.Interfaces;
 using BEapplication.Models;
 using Microsoft.EntityFrameworkCore;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 namespace BEapplication.RequestHandlers
 {
@@ -18,6 +18,9 @@ namespace BEapplication.RequestHandlers
             _context = context;
         }
 
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         public async Task Register(RequestNewUser newUser)
         {
             if (await _context.Users.AnyAsync(u => u.Email == newUser.Email))
@@ -35,6 +38,9 @@ namespace BEapplication.RequestHandlers
             await _context.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         public async Task<string?> Login(UserLoginModel model)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);

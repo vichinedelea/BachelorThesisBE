@@ -1,7 +1,7 @@
 ﻿using BEapplication.Interfaces;
 using BEapplication.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BEapplication.Controllers
 {

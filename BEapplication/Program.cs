@@ -1,11 +1,11 @@
-﻿using BEapplication.DBContexts;
+﻿using System.Text;
+using BEapplication.DBContexts;
 using BEapplication.Interfaces;
-using BEapplication.RequestHandlers;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using BEapplication.Models;
+using BEapplication.RequestHandlers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -71,7 +71,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// 🔐 JWT AUTHENTICATION
+// JWT AUTHENTICATION
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

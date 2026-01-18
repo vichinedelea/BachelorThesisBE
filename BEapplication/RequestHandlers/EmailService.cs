@@ -1,5 +1,4 @@
-﻿using BEapplication.Interfaces;
-using BEapplication.Models;
+﻿using BEapplication.Models;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Extensions.Options;
@@ -16,20 +15,22 @@ namespace BEapplication.RequestHandlers
             _settings = settings.Value;
         }
 
-        // 📩 EMAIL LA CREARE REZERVARE
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         public async Task SendReservationCreatedEmail(Reservation reservation)
         {
             var message = BuildMessage(
-                subject: "Rezervare nouă - Ferma Nedelea",
+                subject: "New booking - Nedelea Farm",
                 body:
-$@"A fost creată o nouă rezervare:
+$@"A new reservation has been created.:
 
-📅 Data: {reservation.ReservationDate:dd.MM.yyyy}
-⏰ Ora: {reservation.ReservationHour}:00
-👥 Număr persoane: {reservation.People}
+📅 Date: {reservation.ReservationDate:dd.MM.yyyy}
+⏰ Hour: {reservation.ReservationHour}:00
+👥 Number of people: {reservation.People}
 📧 Client: {reservation.UserEmail}
 
-— Ferma Nedelea"
+— Nedelea Farm"
             );
 
             await SendAsync(message);
@@ -39,40 +40,23 @@ $@"A fost creată o nouă rezervare:
         public async Task SendReservationCancelledEmail(Reservation reservation)
         {
             var message = BuildMessage(
-                subject: "Rezervare anulată - Ferma Nedelea",
+                subject: "Booking cancelled - Nedelea Farm",
                 body:
-$@"O rezervare a fost anulată:
+$@"A reservation has been canceled:
 
-📅 Data: {reservation.ReservationDate:dd.MM.yyyy}
-⏰ Ora: {reservation.ReservationHour}:00
+📅 Date: {reservation.ReservationDate:dd.MM.yyyy}
+⏰ Hour: {reservation.ReservationHour}:00
 📧 Client: {reservation.UserEmail}
 
-— Ferma Nedelea"
+— Nedelea Farm"
             );
 
             await SendAsync(message);
         }
 
-        // 🔧 Helper comun (fără duplicare de cod)
-        private MimeMessage BuildMessage(string subject, string body)
-        {
-            var message = new MimeMessage();
-
-            message.From.Add(new MailboxAddress(
-                _settings.SenderName,
-                "no-reply@mailtrap.io"));
-
-            message.To.Add(new MailboxAddress(
-                "Admin",
-                "admin@fermanedelea.test"));
-
-            message.Subject = subject;
-            message.Body = new TextPart("plain") { Text = body };
-
-            return message;
-        }
-
-        // 🔌 Trimitere SMTP
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         private async Task SendAsync(MimeMessage message)
         {
             using var client = new SmtpClient();
@@ -95,5 +79,24 @@ $@"O rezervare a fost anulată:
             await client.SendAsync(message);
             await client.DisconnectAsync(true);
         }
+
+        private MimeMessage BuildMessage(string subject, string body)
+        {
+            var message = new MimeMessage();
+
+            message.From.Add(new MailboxAddress(
+                _settings.SenderName,
+                "no-reply@mailtrap.io"));
+
+            message.To.Add(new MailboxAddress(
+                "Admin",
+                "admin@fermanedelea.test"));
+
+            message.Subject = subject;
+            message.Body = new TextPart("plain") { Text = body };
+
+            return message;
+        }
+
     }
 }

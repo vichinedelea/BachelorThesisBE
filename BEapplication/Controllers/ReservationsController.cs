@@ -1,8 +1,8 @@
-﻿using BEapplication.Interfaces;
+﻿using System.Security.Claims;
+using BEapplication.Interfaces;
 using BEapplication.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace BEapplication.Controllers
 {
@@ -17,15 +17,6 @@ namespace BEapplication.Controllers
             _reservationLogic = reservationLogic;
         }
 
-        // YEAR → AVAILABLE MONTHS
-        [HttpGet("availability/{year}/months")]
-        public async Task<IActionResult> GetAvailableMonths(int year)
-        {
-            var months = await _reservationLogic.GetAvailableMonths(year);
-            return Ok(months);
-        }
-
-        // MONTH → AVAILABLE DAYS
         [HttpGet("availability/{year}/{month}/days")]
         public async Task<IActionResult> GetAvailableDays(int year, int month)
         {
@@ -33,7 +24,6 @@ namespace BEapplication.Controllers
             return Ok(days);
         }
 
-        // DAY → AVAILABLE HOURS
         [HttpGet("availability/{year}/{month}/{day}/hours")]
         public async Task<IActionResult> GetAvailableHours(int year, int month, int day)
         {

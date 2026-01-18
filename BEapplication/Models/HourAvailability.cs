@@ -2,7 +2,7 @@
 {
     public class HourAvailability
     {
-        public int Hour { get; set; }            // ex: 14
-        public int AvailableSpots { get; set; }  // ex: 8
+        public int Hour { get; set; }
+        public int AvailableSpots { get; set; }
     }
 }

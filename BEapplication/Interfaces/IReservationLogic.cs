@@ -4,23 +4,43 @@ namespace BEapplication.Interfaces
 {
     public interface IReservationLogic
     {
-        // Creează o rezervare (după toate validările)
+        /// <summary>
+        /// Adds a new reservation for the user identified by userEmail.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="userEmail"></param>
+        /// <returns></returns>
         Task AddReservation(RequestNewReservation request, string userEmail);
 
-        // Verifică dacă mai sunt locuri libere într-un slot
-        Task<bool> HasAvailability(DateOnly date, int hour, int people);
-
-        // 🔽 pentru flow-ul: AN → LUNĂ
-        Task<List<int>> GetAvailableMonths(int year);
-
-        // 🔽 pentru flow-ul: LUNĂ → ZI
+        /// <summary>
+        /// Gets the list of available days in a given month and year.
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <returns></returns>
         Task<List<int>> GetAvailableDays(int year, int month);
 
-        // 🔽 pentru flow-ul: ZI → ORĂ (+ locuri rămase)
+        /// <summary>
+        /// Gets the list of available hours for a specific date.
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="day"></param>
+        /// <returns></returns>
         Task<List<HourAvailability>> GetAvailableHours(int year, int month, int day);
 
+        /// <summary>
+        /// Deletes a reservation by its ID.
+        /// </summary>
+        /// <param name="reservationId"></param>
+        /// <returns></returns>
         Task DeleteReservation(Guid reservationId);
 
+        /// <summary>
+        /// Gets the reservations for the user identified by userEmail.
+        /// </summary>
+        /// <param name="userEmail"></param>
+        /// <returns></returns>
         Task<List<Reservation>> GetMyReservations(string userEmail);
     }
 }

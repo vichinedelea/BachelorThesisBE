@@ -20,24 +20,20 @@ namespace BEapplication.RequestHandlers
             _emailService = emailService;
         }
 
-        // ==================================================
-        // ADD RESERVATION
-        // ==================================================
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         public async Task AddReservation(RequestNewReservation request, string userEmail)
-        {
-            // zi lucrătoare
+        {  
             if (request.ReservationDate.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
-                throw new Exception("Rezervările sunt disponibile doar luni–vineri.");
+                throw new Exception("Reservations are only available Monday–Friday.");
 
-            // oră validă
             if (request.ReservationHour < START_HOUR || request.ReservationHour > END_HOUR)
-                throw new Exception("Rezervările sunt disponibile între 10 și 16.");
+                throw new Exception("\r\nReservations are available between 10 am and 6 pm.");
 
-            // persoane valide
             if (request.People < 1 || request.People > MAX_PEOPLE_PER_HOUR)
-                throw new Exception("Număr invalid de persoane.");
+                throw new Exception("Invalid number of people.");
 
-            // verificare disponibilitate
             var usedPeople = await _context.Reservations
                 .Where(r =>
                     r.ReservationDate == request.ReservationDate &&
@@ -66,59 +62,9 @@ namespace BEapplication.RequestHandlers
 
         }
 
-        // ==================================================
-        // CHECK AVAILABILITY (20 pers / oră)
-        // ==================================================
-        public async Task<bool> HasAvailability(DateOnly date, int hour, int people)
-        {
-            var usedPeople = await _context.Reservations
-                .Where(r => r.ReservationDate == date && r.ReservationHour == hour)
-                .SumAsync(r => r.People);
-
-            return usedPeople + people <= MAX_PEOPLE_PER_HOUR;
-        }
-
-        // ==================================================
-        // YEAR → AVAILABLE MONTHS
-        // ==================================================
-        public async Task<List<int>> GetAvailableMonths(int year)
-        {
-            var result = new List<int>();
-
-            for (int month = 1; month <= 12; month++)
-            {
-                var daysInMonth = DateTime.DaysInMonth(year, month);
-
-                for (int day = 1; day <= daysInMonth; day++)
-                {
-                    var date = new DateOnly(year, month, day);
-
-                    if (date.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
-                        continue;
-
-                    for (int hour = START_HOUR; hour <= END_HOUR; hour++)
-                    {
-                        var used = await _context.Reservations
-                            .Where(r => r.ReservationDate == date && r.ReservationHour == hour)
-                            .SumAsync(r => r.People);
-
-                        if (used < MAX_PEOPLE_PER_HOUR)
-                        {
-                            result.Add(month);
-                            goto NextMonth;
-                        }
-                    }
-                }
-
-            NextMonth:;
-            }
-
-            return result.Distinct().OrderBy(m => m).ToList();
-        }
-
-        // ==================================================
-        // MONTH → AVAILABLE DAYS
-        // ==================================================
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         public async Task<List<int>> GetAvailableDays(int year, int month)
         {
             var result = new List<int>();
@@ -128,11 +74,9 @@ namespace BEapplication.RequestHandlers
             {
                 var date = new DateOnly(year, month, day);
 
-                // ❌ fără weekend
                 if (date.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
                     continue;
 
-                // 🔥 există cel puțin o oră liberă?
                 bool hasAvailableHour = false;
 
                 for (int hour = START_HOUR; hour <= END_HOUR; hour++)
@@ -157,15 +101,14 @@ namespace BEapplication.RequestHandlers
             return result;
         }
 
-        // ==================================================
-        // DAY → AVAILABLE HOURS (+ locuri rămase)
-        // ==================================================
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         public async Task<List<HourAvailability>> GetAvailableHours(int year, int month, int day)
         {
             var date = new DateOnly(year, month, day);
             var result = new List<HourAvailability>();
 
-            // ❌ fără weekend
             if (date.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
                 return result;
 
@@ -175,7 +118,6 @@ namespace BEapplication.RequestHandlers
                     .Where(r => r.ReservationDate == date && r.ReservationHour == hour)
                     .SumAsync(r => r.People);
 
-                // ✅ DOAR ore complet libere
                 if (used == 0)
                 {
                     result.Add(new HourAvailability
@@ -189,6 +131,9 @@ namespace BEapplication.RequestHandlers
             return result;
         }
 
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         public async Task DeleteReservation(Guid reservationId)
         {
             var reservation = await _context.Reservations
@@ -203,6 +148,9 @@ namespace BEapplication.RequestHandlers
             await _emailService.SendReservationCancelledEmail(reservation);
         }
 
+        /// <summary>
+        /// Inheritance
+        /// </summary>
         public async Task<List<Reservation>> GetMyReservations(string userEmail)
         {
             return await _context.Reservations
