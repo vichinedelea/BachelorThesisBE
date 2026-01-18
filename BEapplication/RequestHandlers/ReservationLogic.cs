@@ -128,8 +128,12 @@ namespace BEapplication.RequestHandlers
             {
                 var date = new DateOnly(year, month, day);
 
+                // ❌ fără weekend
                 if (date.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
                     continue;
+
+                // 🔥 există cel puțin o oră liberă?
+                bool hasAvailableHour = false;
 
                 for (int hour = START_HOUR; hour <= END_HOUR; hour++)
                 {
@@ -139,9 +143,14 @@ namespace BEapplication.RequestHandlers
 
                     if (used < MAX_PEOPLE_PER_HOUR)
                     {
-                        result.Add(day);
+                        hasAvailableHour = true;
                         break;
                     }
+                }
+
+                if (hasAvailableHour)
+                {
+                    result.Add(day);
                 }
             }
 
@@ -156,6 +165,7 @@ namespace BEapplication.RequestHandlers
             var date = new DateOnly(year, month, day);
             var result = new List<HourAvailability>();
 
+            // ❌ fără weekend
             if (date.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
                 return result;
 
@@ -165,12 +175,13 @@ namespace BEapplication.RequestHandlers
                     .Where(r => r.ReservationDate == date && r.ReservationHour == hour)
                     .SumAsync(r => r.People);
 
-                if (used < MAX_PEOPLE_PER_HOUR)
+                // ✅ DOAR ore complet libere
+                if (used == 0)
                 {
                     result.Add(new HourAvailability
                     {
                         Hour = hour,
-                        AvailableSpots = MAX_PEOPLE_PER_HOUR - used
+                        AvailableSpots = MAX_PEOPLE_PER_HOUR
                     });
                 }
             }
