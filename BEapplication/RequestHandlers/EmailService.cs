@@ -36,7 +36,6 @@ $@"A new reservation has been created.:
             await SendAsync(message);
         }
 
-        // ❌ EMAIL LA ANULARE REZERVARE
         public async Task SendReservationCancelledEmail(Reservation reservation)
         {
             var message = BuildMessage(
@@ -57,7 +56,7 @@ $@"A reservation has been canceled:
         /// <summary>
         /// Inheritance
         /// </summary>
-        private async Task SendAsync(MimeMessage message)
+        protected virtual async Task SendAsync(MimeMessage message)
         {
             using var client = new SmtpClient();
 
@@ -69,7 +68,6 @@ $@"A reservation has been canceled:
                 587,
                 SecureSocketOptions.StartTls);
 
-            // 🔑 FIX Mailtrap
             client.AuthenticationMechanisms.Remove("CRAM-MD5");
 
             await client.AuthenticateAsync(
