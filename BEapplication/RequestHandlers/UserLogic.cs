@@ -23,8 +23,9 @@ namespace BEapplication.RequestHandlers
         /// </summary>
         public async Task Register(RequestNewUser newUser)
         {
-            if (await _context.Users.AnyAsync(u => u.Email == newUser.Email))
-                throw new Exception("Email deja folosit.");
+            var dbUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == newUser.Email);
+            if (dbUser != null)
+                throw new Exception("Email already used.");
 
             var user = new User
             {
@@ -45,7 +46,9 @@ namespace BEapplication.RequestHandlers
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
             if (user == null)
-                return null;
+            {
+                throw new Exception("No account found with this email.");
+            }
 
             if (!BCrypt.Net.BCrypt.Verify(model.Password, user.PasswordHash))
                 return null;

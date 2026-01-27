@@ -21,23 +21,37 @@ namespace BEapplication.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Register(RequestNewUser model)
         {
-            await _userLogic.Register(model);
-            return Ok("User creat.");
+            try
+            {
+                await _userLogic.Register(model);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpPost("login")]
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] UserLoginModel model)
         {
-            var token = await _userLogic.Login(model);
-
-            if (token == null)
-                return Unauthorized("Email sau parola greșite");
-
-            return Ok(new
+            try
             {
-                token = token
-            });
+                var token = await _userLogic.Login(model);
+
+                if (token == null)
+                    return Unauthorized("Wrong email or password");
+
+                return Ok(new
+                {
+                    token = token
+                });
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
     }
 }

@@ -77,22 +77,15 @@ namespace BEapplication.RequestHandlers
                 if (date.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)
                     continue;
 
-                bool hasAvailableHour = false;
+                var bookedHours = await _context.Reservations
+                    .Where(r => r.ReservationDate == date &&
+                                r.ReservationHour >= 10 &&
+                                r.ReservationHour <= 16)
+                    .Select(r => r.ReservationHour)
+                    .Distinct()
+                    .CountAsync();
 
-                for (int hour = START_HOUR; hour <= END_HOUR; hour++)
-                {
-                    var used = await _context.Reservations
-                        .Where(r => r.ReservationDate == date && r.ReservationHour == hour)
-                        .SumAsync(r => r.People);
-
-                    if (used < MAX_PEOPLE_PER_HOUR)
-                    {
-                        hasAvailableHour = true;
-                        break;
-                    }
-                }
-
-                if (hasAvailableHour)
+                if (bookedHours < 7)
                 {
                     result.Add(day);
                 }
@@ -140,7 +133,7 @@ namespace BEapplication.RequestHandlers
                 .FirstOrDefaultAsync(r => r.Id == reservationId);
 
             if (reservation == null)
-                throw new Exception("Rezervarea nu există");
+                throw new Exception("The reservation does not exist");
 
             _context.Reservations.Remove(reservation);
             await _context.SaveChangesAsync();
